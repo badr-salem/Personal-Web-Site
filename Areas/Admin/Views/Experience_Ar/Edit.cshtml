@@ -1,0 +1,104 @@
+﻿@model BadrBinHomeed_NEW.Models.Experience_Ar
+
+@{
+
+    ViewData["Title"] = "Edit";
+
+}
+
+
+<h1>Edit</h1>
+
+<hr />
+
+<div class="row">
+
+    <div class="col-md-4">
+
+        <form asp-action="Edit" enctype="multipart/form-data">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+
+                <label asp-for="Company_Name" class="control-label"></label>
+
+                <input asp-for="Company_Name" class="form-control" />
+
+                <span asp-validation-for="Company_Name" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="Role_Name" class="control-label"></label>
+
+                <input asp-for="Role_Name" class="form-control" />
+
+                <span asp-validation-for="Role_Name" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="Description" class="control-label"></label>
+
+                <textarea asp-for="Description" class="form-control"></textarea>
+
+                <span asp-validation-for="Description" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="From" class="control-label"></label>
+
+                <input asp-for="From" class="form-control" />
+
+                <span asp-validation-for="From" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="To" class="control-label"></label>
+
+                <input asp-for="To" class="form-control" />
+
+                <span asp-validation-for="To" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <img src="~/images/Experience_Ar/@Model.ImageName" style="height:200px;width:200px" />
+
+                <input type="file" name="file" />
+
+                <span asp-validation-for="ImageName" class="text-danger"></span>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <input type="submit" value="Save" class="btn btn-primary" />
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<div>
+
+    <a asp-action="Index">Back to List</a>
+
+</div>

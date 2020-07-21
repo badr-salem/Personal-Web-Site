@@ -1,0 +1,53 @@
+﻿@model BadrBinHomeed_NEW.Models.Social_Media
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Social_Media</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Github_Url" class="control-label"></label>
+                <input asp-for="Github_Url" class="form-control" />
+                <span asp-validation-for="Github_Url" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Insta_Url" class="control-label"></label>
+                <input asp-for="Insta_Url" class="form-control" />
+                <span asp-validation-for="Insta_Url" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Linkedin_Url" class="control-label"></label>
+                <input asp-for="Linkedin_Url" class="form-control" />
+                <span asp-validation-for="Linkedin_Url" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Twitter_Url" class="control-label"></label>
+                <input asp-for="Twitter_Url" class="form-control" />
+                <span asp-validation-for="Twitter_Url" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CV_Url" class="control-label"></label>
+                <input asp-for="CV_Url" class="form-control" />
+                <span asp-validation-for="CV_Url" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

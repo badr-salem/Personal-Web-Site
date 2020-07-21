@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    #btnindex {
+        margin: 8px;
+        width: 25%;
+    }
+</style>
+
+<div class="text-center">
+    <h1>مرحبا بك في لوحة التحكم</h1>
+    <h1>Welcome on cantrol panel</h1>
+    <hr />
+    <div class="row">
+        <div class="col-lg-6 col-sm-12 p-2">
+            <h3>For Engilsh</h3>
+            <hr />
+            <a asp-area="Admin" asp-controller="Prograaming_Skills_En" asp-action="Index"
+               class="btn btn-info" id="btnindex">Programming Skills</a>
+            <br />
+            <a asp-area="Admin" asp-controller="General_Skills_En" asp-action="Index"
+               class="btn btn-info" id="btnindex">General Skills</a>
+            <br />
+            <a asp-area="Admin" asp-controller="MyProjects_En" asp-action="Index"
+               class="btn btn-info" id="btnindex">My Prjocts</a>
+            <br />
+            <a asp-area="Admin" asp-controller="Experience_En" asp-action="Index"
+               class="btn btn-info" id="btnindex">Experience</a>
+            <br />
+            <a asp-area="Admin" asp-controller="Current_Work_En" asp-action="Index"
+               class="btn btn-info" id="btnindex">Current Work</a>
+            <br />
+            <a asp-area="Admin" asp-controller="Education_En" asp-action="Index"
+               class="btn btn-info" id="btnindex">Education</a>
+            <br />
+            <a asp-area="Admin" asp-controller="Personal_Info_En" asp-action="Index"
+               class="btn btn-info" id="btnindex">Personal Information</a>
+            <br />
+            <a asp-area="Admin" asp-controller="Social_Media" asp-action="Index"
+               class="btn btn-info" id="btnindex">Social Media</a>
+        </div>
+        <div class="col-lg-6 col-sm-12">
+            <h3>للعربي</h3>
+            <hr />
+            <a asp-area="Admin" asp-controller="Programming_Skills_Ar" asp-action="Index"
+               class="btn btn-info" id="btnindex">المهارات البرمجية</a>
+            <br />
+            <a asp-area="Admin" asp-controller="General_Skills_Ar" asp-action="Index"
+               class="btn btn-info" id="btnindex">المهارات العامة</a>
+            <br />
+            <a asp-area="Admin" asp-controller="MyProjects_Ar" asp-action="Index"
+               class="btn btn-info" id="btnindex">مشاريعي</a>
+            <br />
+            <a asp-area="Admin" asp-controller="Experience_Ar" asp-action="Index"
+               class="btn btn-info" id="btnindex">الخبرات</a>
+            <br />
+            <a asp-area="Admin" asp-controller="Current_Work_Ar" asp-action="Index"
+               class="btn btn-info" id="btnindex">العمل الحالي</a>
+            <br />
+            <a asp-area="Admin" asp-controller="Education_Ar" asp-action="Index"
+               class="btn btn-info" id="btnindex">المؤهل الأكاديمي</a>
+            <br />
+            <a asp-area="Admin" asp-controller="Personal_Info_Ar" asp-action="Index"
+               class="btn btn-info" id="btnindex">المعلومات الشخصية</a>
+           
+
+        </div>
+    </div>
+</div>

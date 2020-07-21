@@ -1,0 +1,48 @@
+﻿@model BadrBinHomeed_NEW.Models.Social_Media
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Social_Media</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Github_Url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Github_Url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Insta_Url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Insta_Url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Linkedin_Url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Linkedin_Url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Twitter_Url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Twitter_Url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CV_Url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CV_Url)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

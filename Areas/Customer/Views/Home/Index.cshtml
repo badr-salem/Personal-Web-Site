@@ -1,0 +1,401 @@
+﻿@model BadrBinHomeed_NEW.Models.ViewModels.IndexVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutForIndex.cshtml";
+}
+
+<!-- Start Home Section -->
+<div id="home">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a href="#home" class="navbar-brand"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="custom-toggler-icon"><i class="fas fa-bars"></i></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#skills" class="nav-link">المهارات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link">أعمالي</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#experince" class="nav-link">الخبرات</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#education" class="nav-link">المؤهل الأكاديمي</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">تواصل معي</a>
+                    </li>
+                  
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <!-- End Navigation -->
+    <!-- Start Landing Page Image -->
+    <div class="landing">
+        <div class="home-wrap">
+            <div class="home-inner"></div>
+        </div>
+    </div>
+    <!-- End Landing Page Image -->
+    <!-- Start Landing Page Caption -->
+    <div class="caption text-center text-light text-uppercase">
+
+        <h1 class="font-weight-bold os-animation" data-animation="fadeInUp" data-delay=".6s">مرحبا أنا <span class="text-nuno">بدر بن حميد</span></h1>
+        <h3 class="os-animation" data-animation="fadeInUp" data-delay=".8s"> مهندس برمجيات ومطور ويب ، تعرف عليّ أكثر ..</h3>
+        <a href="#skills" class="btn btn-outline-light btn-lg rounded-0 os-animation" data-animation="fadeInUp" data-delay="1s">لنبدأ</a>
+        <a asp-area="Customer" asp-controller="Home" asp-action="IndexEn" class="btn btn-outline-light btn-lg rounded-0 os-animation" data-animation="fadeInUp" data-delay="1s">ENGLISH</a>
+
+    </div>
+    <!-- End Landing Page Caption -->
+    <!-- Start Bouncing Down Arrow -->
+    <a href="#skills" class="down-arrow text-center">
+        <div class="arrow d-none d-md-block">
+            <i class="fas fa-angle-down"></i>
+        </div>
+    </a>
+    <!-- End Bouncing Down Arrow -->
+
+</div>
+<!-- End Home Section -->
+<!-- Start Skills Section -->
+<div id="skills" class="offset">
+
+
+
+    <!-- Start Jumbotron -->
+    <div class="m-0 py-5">
+
+        <div class="col-12 os-animation" data-animation="fadeInUp">
+            <h3 class="heading">المهارات البرمجية</h3>
+            <div class="heading-underline"></div>
+        </div>
+
+        <div class="container">
+            <div class="row text-center px-lg-4 px-xl-5">
+                <div class="col-12 os-animation" data-animation="fadeInUp" data-delay=".5s">
+                    <ul class="ar_ul">
+                        @foreach (var item in Model.Programming_Skills_Ar.ToList())
+                        {
+                            <li><h2>@item.Name</h2></li>
+                        }
+
+
+                    </ul>
+                </div>
+            </div> <!-- End Row -->
+        </div> <!-- End Container-->
+
+
+        <div class="col-12 os-animation" data-animation="fadeInUp">
+            <h3 class="heading">المهارات العامة</h3>
+            <div class="heading-underline"></div>
+        </div>
+
+        <div class="container">
+            <div class="row text-center px-lg-4 px-xl-5">
+                <div class="col-12 os-animation" data-animation="fadeInUp" data-delay=".5s">
+                    <ul class="ar_ul">
+                        @foreach (var item in Model.General_Skills_Ar.ToList())
+                        {
+                            <li><h2>@item.Name</h2></li>
+                        }
+
+
+                    </ul>
+                </div>
+            </div> <!-- End Row -->
+        </div> <!-- End Container-->
+
+
+    </div> <!-- End Jumbotron -->
+
+
+</div>
+<!-- End of Skills Section -->
+<!--Start Projects Section-->
+<div id="projects" class="offset" dir="ltr">
+
+
+    <div class="fixed">
+        <div class="row dark text-dark text-center">
+            <div class="col-12 os-animation" data-animation="fadeInUp" style="bottom:70px;">
+                <h3 class="heading text-light">أعمالي</h3>
+                <div class="heading-underline"></div>
+            </div>
+
+            <div class="container">
+                <div class="os-animation" data-animation="fadeInUp">
+                    <div id="project-carousel" class="owl-carousel owl-theme">
+                        @foreach (var item in Model.MyProjects_Ar.ToList())
+                        {
+                            <div class="card">
+                                <img height="220px;" src="~/Images/MyProjectsAr/@item.ImageName" alt="" class="card-img-top rounded-0">
+                                <div class="card-body">
+                                    <h4 class="font-weight-bold">@item.Name</h4>
+                                    <h5 class="text-nuno">@item.BuiltBy</h5>
+                                    <p class="border-top border-bottom py-3 my-3">@item.Description</p>
+                                    <ul class="social">
+                                        <li><a target="_blank" href="@item.Github_Url"><i class="fab fa-github"></i></a></li>
+                                        @if (item.Live_Url != null)
+                                        {
+                                            <li><a target="_blank" href="@item.Live_Url"><i class="fab fa-chrome"></i></a></li>
+
+                                        }
+                                    </ul>
+                                </div>
+                            </div> <!-- End Card -->
+                        }
+
+
+
+
+                    </div> <!--End project-carousel-->
+                </div> <!--End Animation-->
+            </div> <!--End Container-->
+
+        </div> <!--End Row-->
+        <div class="fixed-wrap">
+            <div class="fixed-dark"></div>
+        </div>
+
+    </div> <!--End fixed-->
+</div>
+<!-- End Project Section -->
+<!--Start Experince Section-->
+<div id="experince" class="offset" dir="ltr" lang="en">
+
+
+    <div class="fixed">
+        <div class="row light ">
+            <div class="col-12 os-animation" data-animation="fadeInUp" style="bottom:70px;">
+                <h3 class="heading">الخبرات</h3>
+                <div class="heading-underline"></div>
+            </div>
+
+            <div class="container">
+                <div class="os-animation" data-animation="fadeInUp">
+                    <div id="experince-carousel" class="owl-carousel owl-theme">
+                        @foreach (var item in Model.Experience_Ar.ToList())
+                        {
+                            <div class="card">
+                                <img height="220px;" src="~/Images/Experience_Ar/@item.ImageName" alt="" class="card-img-top rounded-0 border-bottom">
+                                <div class="card-body">
+                                    <h4 class="font-weight-bold">@item.Company_Name</h4>
+                                    <h5 class="text-nuno">@item.Role_Name</h5>
+                                    <h5>
+                                        @item.From
+                                        -
+                                        @item.To
+                                    </h5>
+                                    <h6>@item.Description</h6>
+
+                                </div>
+                            </div> <!-- End Card -->
+                        }
+
+
+
+
+
+
+
+                    </div> <!--End Corusal-->
+                    <br />
+
+
+                </div> <!--End Animation-->
+                <div class="os-animation" data-animation="fadeInUp">
+                    <div class="col-12">
+                        <h3 class="heading">العمل الحالي</h3>
+                        <div class="heading-underline"></div>
+                    </div>
+                    <div class="col-12" dir="rtl">
+                        <ul class="ar_ul">
+                            @foreach (var item in Model.Current_Work_Ar.ToList())
+                            {
+                                <li><h2>@item.Name</h2></li>
+
+                            }
+
+                        </ul>
+                    </div>
+                </div>
+            </div> <!--End Container-->
+
+        </div> <!--End Row-->
+        <div class="fixed-wrap">
+            <div class="fixed-light"></div>
+        </div>
+
+    </div> <!--End fixed-->
+</div>
+
+
+
+
+<!-- End Experince Section-->
+<!--Start Education section-->
+<div id="education" class="offset">
+
+    <div id="dark-jumbotron" class="jumbotron m-0 py-5">
+        <div class="os-animation" data-animation="fadeInUp">
+            <div class="col-12">
+                <h3 class="heading">المؤهل الأكاديمي</h3>
+                <div class="heading-underline"></div>
+            </div>
+
+            <div class="container">
+                <div class="col-12">
+                    <ul class="ar_ul2">
+                        @foreach (var item in Model.Education_Ar.ToList())
+                        {
+                            <li><h3>@item.Name</h3></li>
+
+                        }
+                    </ul>
+                </div>
+            </div> <!--End container-->
+
+        </div> <!--End Animation-->
+
+    </div> <!--End drak jumbotron-->
+
+
+
+</div>
+<!--End Education section-->
+<!-- Start conact section -->
+<div id="contact" class="offset">
+
+    <div class="container-fluid footer px-0">
+        <div class="row outer">
+
+            <div class="container">
+                <div class="row py-3">
+
+
+
+                    <div class="col-12">
+                        <div class="os-animation" data-animation="fadeInUp">
+                            <h3 class="heading">تواصل معي</h3>
+                            <div class="heading-underline"></div>
+                        </div>
+
+
+                        <div class="row os-animation" data-animation="fadeInUp">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <form method="post" asp-area="Customer" asp-controller="Home" asp-action="Index">
+
+                                    <div class="messages"></div>
+                                    <div class="controls" style="text-align: right;">
+
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" asp-for="@Model.Name" required="required" placeholder="اسمك">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" asp-for="@Model.Email" required="required" placeholder="بريدك الإلكتروني">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" asp-for="@Model.PhoneNumber" placeholder="رقم الجوال (اختياري)">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" asp-for="@Model.Subject" required="required" placeholder="عنوان الرسالة">
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea asp-for="@Model.Message" rows="4" class="form-control" required="required" placeholder="رسالتك"></textarea>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-outline-dark btn-sm">إرسال</button>
+
+                                    </div> <!-- End Controls -->
+
+                                </form> <!-- End Form -->
+                            </div> <!--End Column-->
+                            <div class="col-lg-6 col-md-6 col-sm-12" id="div-card-ar">
+                                @foreach (var item in Model.Personal_Info_Ar.ToList())
+                                {
+                                    <div class="card" style="width: 18rem;">
+                                        <img class="card-img-top" src="~/Images/Personal_Info_Ar/@item.ImageName" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">المعلومات الشخصية</h5>
+                                            <p class="card-text">
+                                                رقم الجوال : @item.Mobile <br />
+                                                البريد الإلكتروني : @item.Email <br />
+                                                الجنسية : @item.Nationality <br />
+                                                بلد الإقامة  : @item.Residence <br />
+
+                                            </p>
+                                            @foreach (var item2 in Model.Social_Media.ToList())
+                                            {
+                                                <a target="_blank" href="" class="btn btn-sm nuno-btn"><span style="font-size:small;">تحميل نسخة من السيرة الذاتية</span></a>
+
+                                                <div class="card-footer mt-2" style="background-color:white;">
+                                                    <ul class="social-footer pt-3">
+                                                        <li><a target="_blank" href="@item2.Twitter_Url"><i class="fab fa-twitter-square"></i></a></li>
+                                                        <li><a target="_blank" href="@item2.Github_Url"><i class="fab fa-github-square"></i></a></li>
+                                                        <li><a target="_blank" href="@item2.Linkedin_Url"><i class="fab fa-linkedin"></i></a></li>
+                                                        <li><a target="_blank" href="@item2.Insta_Url"><i class="fab fa-instagram"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            }
+
+                                        </div>
+
+                                    </div> <!--End Card-->
+                                }
+
+                            </div> <!-- End Column -->
+                        </div>
+
+
+
+                    </div> <!-- End Row -->
+
+                </div> <!-- End Row -->
+            </div> <!-- End Container -->
+
+            <hr class="socket">
+            <div class="row container-fluid">
+                <div class="col-lg-8 col-md-8 col-sm-6" style="text-align: right;">
+                    &copy; تطوير : م.بدر بن حميد
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+</div>
+<!-- End Contact Section -->
+<!-- Top Scroll -->
+<a href="#home" class="top-scroll">
+    <i class="fa fa-angle-up"></i>
+</a>
+
+
+<!-- End conact section -->
